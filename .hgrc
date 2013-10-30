@@ -1,0 +1,18 @@
+[ui]
+username = cku@mozilla.com
+merge = internal:merge
+
+[extensions]
+mq =
+ 
+[diff]
+git = 1
+showfunc = 1
+unified = 8
+
+[defaults]
+commit = -v
+
+[paths]
+try = ssh://cku@mozilla.com@hg.mozilla.org/try
+
