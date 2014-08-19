@@ -1,0 +1,38 @@
+# Build config
+export ENABLE_MARIONETTE=1
+# export B2G_DEBUG=1
+export DEVICE_DEBUG=1
+export B2G_NOOPT=1
+export NOFTU=1
+# export MOZ_PROFILING=1
+
+# Source path
+export B2G_DIR=${B2G_DIR:-$(cd $(dirname $0); pwd)}
+echo "B2G_DIR = ${B2G_DIR}"
+
+# Must keep gecko_dev and b2g have the same parent folder.
+export GECKO_PATH=${GECKO_PATH:-$(dirname "$B2G_DIR")'/mozilla-central'}
+echo "GECKO_PATH = ${GECKO_PATH}"
+if [ ! -d $GECKO_PATH ]; then
+  # exit if dir does not exist.
+  echo "${GECKO_PATH} does not exist."
+  exit
+fi
+
+export GAIA_PATH=${GAIA_PATH:-$(dirname "$B2G_DIR")'/gaia'}
+echo "GAIA_PATH = ${GAIA_PATH}"
+if [ ! -d $GAIA_PATH ]; then
+  # exit if dir does not exist.
+  echo "${GAIA_PATH} does not exist."
+  exit
+fi
+
+# Binary path
+if [ ! -z $B2G_DEBUG ]; then
+  export GECKO_OBJDIR=${B2G_DIR}/obj-debug
+else
+  export GECKO_OBJDIR=${B2G_DIR}/obj-release
+fi
+
+echo "GECKO_OBJDIR = ${GECKO_OBJDIR}"
+
