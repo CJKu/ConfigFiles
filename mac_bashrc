@@ -11,7 +11,8 @@ fi
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
-alias hq='hg'
+alias hq='hg qseries -v -s'
+alias hpush='hg push -f -rtip ssh://cku@mozilla.com@hg.mozilla.org/try'
 
 export CLICOLOR=YES
 
@@ -30,6 +31,7 @@ add_path ~/adt-bundle/sdk/platform-tools
 add_path ~/adt-bundle/sdk/tools
 add_path /usr/local/bin
 add_path ~/repository/moz-git-tools
+add_path ~/repository/Utility
 
 # Print the value of $PATH
 function print_path () {
@@ -55,7 +57,13 @@ function parse_git_branch {
 
 # Add hg queue into prompt
 function parse_hg_queue {
-  hg qqueue --active 2> /dev/null | sed -e 's/\(.*\)/(\1)/'
+  hg qqueue --active 2> /dev/null | sed -e 's/\(.*\)/(\1)/' | awk 'BEGIN { ORS=""; } { print $1; }'
+  hg qseries -v 2> /dev/null | awk -v ACTIVE_PATCHES=0 \
+  '
+    BEGIN { ORS="" }
+    $2 ~ /A/ { ACTIVE_PATCHES++; }
+    END { print "(" ACTIVE_PATCHES ")" }
+  '
 }
 
 export PS1="\[\e[32;0m\]\u@${GREEN}\w${BLUE}\$(parse_git_branch)\$(parse_hg_queue)"
