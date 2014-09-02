@@ -4,7 +4,7 @@ filetype plugin indent on
 nnoremap <F9> :TlistToggle
 set number
 
-" color torte
+color desert
 
 set smartindent
 set tabstop=2
@@ -27,5 +27,22 @@ match ExtraWhitespace /\s\+$/
 " autocmd BufWinLeave * call clearmatches()
 
 " Display filename
-set modeline
-set ls=2
+" set modeline
+"set ls=2
+" set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v]\ [%p%%]\ [LEN=%L]
+set laststatus=2
+set statusline=%4*%<\ %1*[%F]
+set statusline+=%4*\ %5*[%{&encoding}, " encoding
+set statusline+=%{&fileformat}%{\"\".((exists(\"+bomb\")\ &&\ &bomb)?\",BOM\":\"\").\"\"}]%m
+set statusline+=%4*%=\ %6*%y%4*\ %3*%l%4*,\ %3*%c%4*\ \<\ %2*%P%4*\ \>
+highlight User1 ctermfg=red
+highlight User2 term=underline cterm=underline ctermfg=green
+highlight User3 term=underline cterm=underline ctermfg=yellow
+highlight User4 term=underline cterm=underline ctermfg=white
+highlight User5 ctermfg=cyan
+highlight User6 ctermfg=white
+
+" Visual effect for cursor
+set cursorline
+set cursorcolumn
+
