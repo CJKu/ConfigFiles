@@ -180,7 +180,7 @@
 
 # Log
 #
-    graph-log = "!graphLog() { git log --graph --pretty=oneline --abbrev-commit; }; graphLog"
+    show-graph = "!showGraph() { git log --graph --pretty=oneline --abbrev-commit; }; showGraph"
 
 # Remove old commits
 #
