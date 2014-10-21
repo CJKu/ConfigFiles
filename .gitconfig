@@ -178,6 +178,10 @@
 
 
 
+# Log
+#
+    graph-log = "!graphLog() { git log --graph --pretty=oneline --abbrev-commit; }; graphLog"
+
 # Remove old commits
 #
 # git clear-reflog-now
@@ -189,7 +193,9 @@
 
     checkout-remote-branches = "!checkoutRemoteBranches() {for name in `git list-remote-branches`; do git checkout $name; done; }; checkoutRemoteBranches"
 
-    clone-with-branches = "!cloneWithBranches() { git clone $1 $2; cd $2; git checkout-remote-branches; git remote rm origin }; cloneWithBranches"
+    clone-with-branches = "!cloneWithBranches() { git clone $1 $2; cd $2; git checkout-remote-branches; git remote rm origin; }; cloneWithBranches"
+
+
 #
 # ===[ALIAS-STOP]===
 [user]
