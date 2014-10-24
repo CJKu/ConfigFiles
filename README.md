@@ -20,3 +20,5 @@
 6. [Install BufExplorer.](http://www.vim.org/scripts/script.php?script_id=42)
 7. Copy .vimrc in this repository to ${HOME}
 
+#Sublime Text 2
+1. [Clone solarize for sublime text 2](https://github.com/SublimeColors/Solarized)
