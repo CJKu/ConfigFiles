@@ -10,6 +10,7 @@ run install.sh
 3. Clone https://github.com/bling/vim-airline
 4. Clone https://github.com/Lokaltog/powerline-fonts
 5. Set terminal font as powerline font download in #4
-4. Copy .vimrc to home
+6. [Install BufExplorer](http://www.vim.org/scripts/script.php?script_id=42)
+7. Copy .vimrc to home
 
 #iTerm2
