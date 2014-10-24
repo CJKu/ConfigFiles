@@ -3,6 +3,9 @@
 Clone https://github.com/CJKu/gnome-terminal-colors-solarized
 run install.sh
 ## tmux
+1. Install tmux package from apt-get on ubuntu or brew on MacOS
+2. [Install powerline](https://github.com/Lokaltog/powerline.git)
+3. Copy .tmux.conf here to ${HOME}
 
 ## vim
 1. [Install plug-in manager: pathogen.] (https://github.com/tpope/vim-pathogen)
