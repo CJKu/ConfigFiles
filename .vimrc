@@ -6,8 +6,6 @@ set nocp
 filetype plugin indent on
 syntax on
 
-"set t_Co=256                                  " For screeni
-
 " Setup Solarized theme
 if has('gui_running')
   set background=light
@@ -31,7 +29,14 @@ let g:airline_powerline_fonts = 1
 
 let g:airline#extensions#tabline#enabled = 1  " head bar.
 
+" Setup ControlP
+" Hint: how to install ControlP
+"   http://kien.github.io/ctrlp.vim/#installation
+"   https://github.com/kien/ctrlp.vim
 set runtimepath^=~/.vim/bundle/ctrlp.vim      " ControlP plugin
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip      " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe   " Windows
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 
 " Identify trailer space
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -61,22 +66,6 @@ set ruler               " Show the line and column number of the cursor position
 set fillchars+=vert:\   " remove | line of vsplit
 "set mouse=a             " Enable the use of the mouse.
 
-" omnicppcomplete options
-" -- optional --
-" auto close options when exiting insert mode or moving away
-"autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-"autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-"set completeopt=menu,menuone
-
-" -- configs --
-"let OmniCpp_MayCompleteDot = 1      " autocomplete with .
-"let OmniCpp_MayCompleteArrow = 1    " autocomplete with ->
-"let OmniCpp_MayCompleteScope = 1    " autocomplete with ::
-"let OmniCpp_SelectFirstItem = 2     " select first item (but don't insert)
-"let OmniCpp_NamespaceSearch = 2     " search namespaces in this and included files
-"let OmniCpp_ShowPrototypeInAbbr = 1 " show function prototype (i.e. parameters) in popup window
-"let OmniCpp_LocalSearchDecl = 1     " don't require special style of function opening braces
-
 function! CompleteTab()
   let prec = strpart( getline('.'), 0, col('.')-1 )
   if prec =~ '^\s*$' || prec =~ '\s$'
@@ -94,10 +83,5 @@ noremap <silent> <M-F4> :bn<CR>
 noremap <silent> <S-F4> :bp<CR>
 noremap <silent> <F5> :NERDTree<CR>
 noremap <silent> <F6> :FixWhitespace<CR>
-"noremap <F10> :CompleteTab()
-" noremap <F10>=CompleteTab()<CR>
-" omni map
-noremap <F11> :!`brew --prefix`/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q -f ~/.vim/commontags /usr/include /usr/local/include ~/repository/mozilla-central/obj-debug/dist/include<CR>
-set tags+=~/.vim/commontags
-noremap <F12> :!`brew --prefix`/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-set tags+=./tags
+
+" au BufNewFile,BufRead *.jsm filetype=javascript
