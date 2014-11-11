@@ -2,6 +2,7 @@
 1. [Clone solarized color theme for gnome terminal](https://github.com/CJKu/gnome-terminal-colors-solarized)
 2. run install.sh
 3. cp ubuntu/.bashrc to ${HOME}
+4. run install.sh again if you did something wrong in profile setting.
 
 #iTerm2
 1. Juse download solarized theme for iTerm2 and setup
