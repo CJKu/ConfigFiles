@@ -1,6 +1,7 @@
 # Firefox build config for MacOS
-
 . $topsrcdir/build/macosx/mozconfig.common
+# Firefox build config for Linux
+#. $topsrcdir/build/unix/mozconfig.linux
 
 export ENABLE_MARIONETTE=1
 ac_add_options --disable-optimize
