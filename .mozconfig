@@ -1,23 +1,33 @@
-. "$topsrcdir/b2g/config/mozconfigs/common"
+# Firefox build config for MacOS
+
+. $topsrcdir/build/macosx/mozconfig.common
 
 export ENABLE_MARIONETTE=1
+ac_add_options --disable-optimize
 
-mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-debug
+# Postfix with .noindex to prevent finder waste CPU usage while compiling.
+mk_add_options MOZ_OBJDIR=@TOPSRCDIR@/obj-debug.noindex
 
 # Enable parallel compiling
 mk_add_options MOZ_MAKE_FLAGS="-j12"
 
-ac_add_options --enable-debug
+ac_add_options --enable-application=browser
+
+# Compiler options.
+ac_add_options --enable-debug --disable-optimize
+#ac_add_options --enable-optimize=-O2
+ac_add_options --with-ccache
+
 ac_add_options --enable-trace-malloc
 ac_add_options --enable-accessibility
 ac_add_options --enable-signmar
 
+# Test
 # This option is required if you want to be able to run Gaia's tests
 ac_add_options --enable-tests
 
 # Treat warnings as errors in directories with FAIL_ON_WARNINGS.
 ac_add_options --enable-warnings-as-errors
-ac_add_options --with-ccache
 
 # Package js shell.
 export MOZ_PACKAGE_JSSHELL=1
