@@ -6,7 +6,7 @@
 
 #mintty(cygwin terminator)
 1. [Install solarized color them](https://github.com/mavnn/mintty-colors-solarized)
-
+2. cp cygwin/.bashrc to ${HOME}
 #iTerm2
 1. Download solarized theme for iTerm2 and setup
 2. cp mac/.bashrc to ${HOME}
