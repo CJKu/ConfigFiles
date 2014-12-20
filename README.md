@@ -23,9 +23,11 @@
 4. [Install powerline's fonts](https://github.com/Lokaltog/powerline-fonts) Set terminal's font as one of powerline font
 6. [Install BufExplorer.](http://www.vim.org/scripts/script.php?script_id=42)
 7. [Install control-P.](http://kien.github.io/ctrlp.vim/#installation)
+
    Simple instruction:
    $ cd ~/.vim
    $ git clone https://github.com/kien/ctrlp.vim.git bundle/ctrlp.vim
+
 8. Copy .vimrc in this repository to ${HOME}
 
 #Sublime Text 2
