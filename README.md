@@ -4,8 +4,11 @@
 3. cp ubuntu/.bashrc to ${HOME}
 4. run install.sh again if you did something wrong in profile setting.
 
+#mintty(cygwin terminator)
+1. [Install solarized color them](https://github.com/mavnn/mintty-colors-solarized)
+2. cp cygwin/.bashrc to ${HOME}
 #iTerm2
-1. Juse download solarized theme for iTerm2 and setup
+1. Download solarized theme for iTerm2 and setup
 2. cp mac/.bashrc to ${HOME}
 
 # tmux
@@ -18,7 +21,8 @@
 2. [Install solarized color theme.](http://ethanschoonover.com/solarized/vim-colors-solarized)
 3. [Install airline statusbar.](https://github.com/bling/vim-airline)
 4. [Install powerline's fonts](https://github.com/Lokaltog/powerline-fonts) Set terminal's font as one of powerline font
-6. [Install BufExplorer.](http://www.vim.org/scripts/script.php?script_id=42)
+5. [Install BufExplorer.](http://www.vim.org/scripts/script.php?script_id=42)
+6. [Install control-P.](http://kien.github.io/ctrlp.vim/#installation)
 7. Copy .vimrc in this repository to ${HOME}
 
 #Sublime Text 2

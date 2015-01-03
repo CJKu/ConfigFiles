@@ -1,5 +1,5 @@
 # Firefox build config for MacOS
-. $topsrcdir/build/macosx/mozconfig.common
+#. $topsrcdir/build/macosx/mozconfig.common
 # Firefox build config for Linux
 #. $topsrcdir/build/unix/mozconfig.linux
 
