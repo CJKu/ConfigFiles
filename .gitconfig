@@ -201,3 +201,9 @@
 [user]
 	name = CJKu
 	email = cjcool.tw@gmail.com
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true
+[credential]
+	helper = osxkeychain
